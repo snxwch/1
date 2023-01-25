@@ -1,0 +1,10 @@
+/** Bonus greed's CSS :) */
+div.container {
+    display: grid;
+    width: 800px;
+    margin: 0 auto 0;
+    grid-template-columns: auto auto;
+}
+div.container .item {
+    padding: 5px;
+}

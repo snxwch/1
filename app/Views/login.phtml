@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Авторизация на сайте</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="<?=$config['url']?>/assets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="<?=$config['url']?>/assets/signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+<form class="form-signin" action="<?=$config['url']?>/?c=login&a=login" method="post">
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Пожалуйста, войдите</h1>
+    <p><em>Нет аккаунта? <a href="<?=$config['url']?>/?c=register">Регистрация</a></em></p>
+
+    <label for="inputEmail" class="sr-only">Email </label>
+    <input type="email" id="inputEmail" class="form-control"
+           placeholder="Email адрес" name="email" required autofocus>
+    <label for="inputPassword" class="sr-only">Пароль</label>
+    <input type="password" id="inputPassword"
+           name="password" class="form-control" placeholder="Пароль" required>
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me" value="1"> Запомнить меня
+        </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Авторизация на сайте</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+</form>
+</body>
+</html>

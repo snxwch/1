@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Регистрация на сайте</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="<?=$config['url']?>/assets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="<?=$config['url']?>/assets/signin.css" rel="stylesheet">
+    <link href="<?=$config['url']?>/assets/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+<form method="post" action="<?=$config['url']?>/?c=register&a=register">
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <br><h1 class="h3 mb-3 font-weight-normal">Зарегистрируйтесь пожалуйста</h1>
+    <p><em>Уже есть аккаунт? <a href="<?=$config['url']?>/?c=login">Войти</a></em></p>
+    <p style="font-weight:bold;">Основные данные</p>
+    <div class="container">
+
+        <div class="item">
+            <label for="inputName" class="sr-only">Имя*</label>
+            <input type="text" id="inputName" name="name" class="form-control" placeholder="Имя" required autofocus><br>
+            <label for="inputSurname" class="sr-only">Фамилия</label>
+            <input type="text" id="inputSurname" class="form-control" name="surname" placeholder="Фамилия" required autofocus><br>
+        </div>
+        <div class="item">
+
+            <label for="inputPhone" class="sr-only">Телефон</label>
+            <input type="text" id="inputPhone" class="form-control" name="phone" placeholder="+7(918)000-00-00" required autofocus><br>
+            <label for="inputEmail" class="sr-only">Email адрес</label>
+            <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email адрес" required autofocus>
+        </div>
+    </div>
+
+    <p style="font-weight:bold;">Адрес</p>
+    <div class="container">
+
+        <div class="item">
+            <label for="inputCountry" class="sr-only">Страна</label>
+            <select class="form-control" name="country_id">
+                <option value="0" id="inputCountry">Выбрать страну</option>
+                <?php foreach($countries as $country): ?>
+                    <option value="<?=$country['id']?>"><?=$country['name']?></option>
+                <?php endforeach; ?>
+            </select><br>
+            <label for="inputRegion" class="sr-only">Регион</label>
+            <select class="form-control" name="region_id">
+                <option value="0" id="inputRegion">Выбрать регион</option>
+                <?php foreach($regions as $region): ?>
+                    <option value="<?=$region['id']?>"><?=$region['name']?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+
+        <div class="item">
+            <label for="inputCity" class="sr-only">Город</label>
+            <select class="form-control" name="city_id">
+                <option value="0" id="inputCity">Выбрать город</option>
+                <?php foreach($cities as $city): ?>
+                    <option value="<?=$city['id']?>"><?=$city['name']?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
+
+
+    <p style="font-weight:bold;">Пароль</p>
+    <div class="container">
+
+        <div class="item">
+
+    <label for="inputPassword" class="sr-only">Пароль</label>
+    <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Пароль" required>
+        </div><div class="item">
+    <label for="inputPassword" class="sr-only">Повторите Пароль</label>
+    <input type="password" id="inputPassword" class="form-control" name="password_confirmation" placeholder="Повторите Пароль" required>
+        </div>
+    </div>
+    <p>Подписаться на новости: <input type="checkbox" name="is_news_subscribe" value="1"> </p>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Регистрация на сайте</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+</form>
+</body>
+</html>

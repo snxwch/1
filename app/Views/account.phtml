@@ -1,0 +1,31 @@
+<?php if($user->isadmin): ?><a href="?c=admin">В админку</a>&nbsp;<?php endif; ?>
+<a href="<?=$config['url']?>/?c=account&a=logout">Выход</a>
+<?php if(!$user->status): ?>
+<h1 style="color:red;">Ваш аккаунт на модерации</h1>
+<?php else: ?>
+    <h1 style="color:green;">Ваш аккаунт активен</h1>
+<br>
+<table width="100%">
+    <tr>
+        <td>Имя Фамилия</td>
+        <td><?=$user->name?>  <?=$user->surname?></td>
+    </tr>
+    <tr>
+        <td>E-mail</td>
+        <td><?=$user->email?> </td>
+    </tr>
+    <tr>
+        <td>Телефон</td>
+        <td><?=$user->phone?></td>
+    </tr>
+    <tr>
+        <td>Адрес</td>
+        <td><?=$user->address?></td>
+    </tr>
+
+    <tr>
+        <td>Страна/Регион/Город</td>
+        <td><?=$country->name?>/<?=$region->name?>/<?=$city->name?> </td>
+    </tr>
+</table>
+<?php endif; ?>

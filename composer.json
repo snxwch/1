@@ -1,0 +1,25 @@
+{
+    "name": "mzcoding/lk",
+    "description": "Demo lk",
+    "type": "project",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "stanislav",
+            "email": "mzcoding@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/http-foundation": "^4.2@dev",
+        "pimple/pimple": "^3.2@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "helpers/helpers.php"
+        ]
+    }
+}
